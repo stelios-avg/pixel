@@ -80,7 +80,7 @@ function Crystal() {
 
 export default function Work() {
   const [selected, setSelected] = useState<Project | null>(null)
-  const [showFullScreen, setShowFullScreen] = useState(false)
+  const [, setShowFullScreen] = useState(false)
 
   // ⎋ Ενεργοποίηση ESC για έξοδο από fullscreen
   useEffect(() => {

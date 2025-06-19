@@ -8,7 +8,7 @@ import { Environment, Text } from '@react-three/drei'
 import About from './sections/about'
 import Work from './sections/work'
 import Contact from './sections/contact'
-import Head from 'next/head'
+
 
 
 

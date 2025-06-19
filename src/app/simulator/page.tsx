@@ -3,7 +3,7 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, Environment, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef,} from 'react'
 
 // Terrain
 function DesertScene() {
@@ -27,9 +27,9 @@ function Car() {
 
   // Apply color to car model
   useEffect(() => {
-    scene.traverse((child: any) => {
-      if (child.isMesh) {
-        child.material = new THREE.MeshStandardMaterial({ color: '#ff6600' }) // Πορτοκαλί
+    scene.traverse((child: THREE.Object3D) => {
+      if ((child as THREE.Mesh).isMesh) {
+        (child as THREE.Mesh).material = new THREE.MeshStandardMaterial({ color: '#ff6600' }) // Πορτοκαλί
       }
     })
   }, [scene])
