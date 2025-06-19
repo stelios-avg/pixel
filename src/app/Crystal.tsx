@@ -20,8 +20,8 @@ export default function Crystal() {
       <icosahedronGeometry args={[1.2, 0]} />
       <MeshTransmissionMaterial
         backside
-        samples={7}
-        resolution={780}
+        samples={10}
+        resolution={1024}
         transmission={1}
         thickness={0.6}
         chromaticAberration={0.03}

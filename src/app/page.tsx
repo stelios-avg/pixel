@@ -12,6 +12,9 @@ import Contact from './sections/contact'
 
 
 
+
+
+
 export default function Home() {
   return (
     <div className="relative w-screen h-auto overflow-x-hidden bg-black text-white">
@@ -50,15 +53,20 @@ export default function Home() {
       </div>
 
       {/* 🔸 Logo */}
-      <div className="absolute top left-2 w-40 h-20 z-50">
+      <div className="absolute top left w-40 h-20 z-50">
         <img
           src="/pixel.png"
+          alt="Logo"
         />
       </div>
 
       {/* 🔸 Burger Menu */}
       <Menu />
+      
 
+
+
+   
       {/* 🔹 Sections πάνω από τον crystal */}
       <div className="relative z-10">
         <section id="home" className="h-screen flex items-center justify-center">

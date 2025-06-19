@@ -20,7 +20,7 @@ has3D: true,
   {
     title: 'PixelMart',
     description: 'A clean and responsive e-commerce layout...',
-    tags: ['Next.js', 'Tailwind'],
+    tags: ['Next.js', 'Tailwind CSS', 'E-commerce'],
     preview: '/image/pixelmart.jpg',
     images: [
       '/image/pixelmart-1.jpg',
@@ -32,7 +32,7 @@ has3D: true,
   {
   title: 'StructureHub',
   description: '...',
-  tags: ['Next.js', 'GSAP'],
+  tags: ['Next.js', 'Tailwind CSS', 'Design System'],
   preview: '/images/structurehub.jpg',
   hasDemo: true,
   images: [
@@ -46,7 +46,13 @@ has3D: true,
   {
     title: 'Simulator X',
     description: 'An interactive dashboard simulator with real-time data flow and user state control.',
-    tags: ['React', 'Zustand', 'D3.js'],
+    tags: ['Next.js', 'React', 'TypeScript'],
+     has3D: false,
+     images: [
+       '/images/simulator-1.jpg',
+       '/images/simulator-2.jpg',
+       '/images/simulator-3.jpg',
+     ],
     preview: '/images/simulatorx.jpg',
      href: '/simulator'
   },

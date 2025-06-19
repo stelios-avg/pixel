@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mario Clone</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+
+  <script type="module">
+    import kaboom from "https://unpkg.com/kaboom@3000.0.0-beta.1/dist/kaboom.mjs";
+
+    const k = kaboom({
+      background: [135, 206, 235],
+      scale: 2,
+    });
+
+    // Load sprites
+    k.loadSprite("mario", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/mario.png");
+k.loadSprite("block", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/block.png");
+k.loadSprite("surprise", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/surprise.png");
+k.loadSprite("unboxed", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/unboxed.png");
+k.loadSprite("coin", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/coin.png");
+k.loadSprite("enemy", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/enemy.png");
+k.loadSprite("ground", "https://raw.githubusercontent.com/hadronized/kaboom-mario-clone/main/sprites/ground.png");
+
+    // Level design
+    const level = [
+      "                        ",
+      "                        ",
+      "                        ",
+      "                        ",
+      "      %  =*=%=          ",
+      "                        ",
+      "              -+        ",
+      "            ^ ()        ",
+      "========================"
+    ];
+
+    const levelConfig = {
+      width: 20,
+      height: 20,
+      "=": () => k.sprite("ground").area().solid(),
+      "$": () => k.sprite("coin").area().body("static"),
+      "%": () => k.sprite("surprise").area().solid().tag("coin-box"),
+      "*": () => k.sprite("surprise").area().solid().tag("mushroom-box"),
+      "-": () => k.sprite("block").area().solid(),
+      "+": () => k.sprite("block").area().solid(),
+      "^": () => k.sprite("enemy").area().solid().body(),
+      "()": () => k.sprite("unboxed").area().solid(),
+    };
+
+    k.addLevel(level, levelConfig);
+
+    const player = k.add([
+      k.sprite("mario"),
+      k.area(),
+      k.body(),
+      k.pos(30, 0),
+      k.scale(1),
+    ]);
+
+    // Player controls
+    k.onKeyDown("left", () => {
+      player.move(-120, 0);
+    });
+
+    k.onKeyDown("right", () => {
+      player.move(120, 0);
+    });
+
+    k.onKeyPress("space", () => {
+      if (player.isGrounded()) {
+        player.jump(400);
+      }
+    });
+
+    // Enemies movement
+    k.onUpdate(() => {
+      for (const enemy of k.get("enemy")) {
+        enemy.move(-20, 0);
+      }
+    });
+
+    // Collision with enemies
+    player.onCollide("enemy", () => {
+      k.go("lose");
+    });
+
+    // Game Over screen
+    k.scene("lose", () => {
+      k.add([
+        k.text("Game Over!", 32),
+        k.pos(k.width() / 2, k.height() / 2),
+        k.anchor("center"),
+      ]);
+    });
+  </script>
+
+</body>
+</html>

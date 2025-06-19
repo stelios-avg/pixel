@@ -8,11 +8,11 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full px-6 py-4 flex justify-between items-center z-50">
-
+    
       {/* Burger Button */}
       <button
   onClick={() => setIsOpen((prev) => !prev)}
-  className="absolute top-11 right-4 z-50 w-8 h-8 flex flex-col justify-between items-center group"
+  className="absolute top-14 right-4 z-50 w-8 h-8 flex flex-col justify-between items-center group"
 >
   {/* Line 1 */}
   <span
@@ -52,8 +52,9 @@ export default function Navbar() {
       href="#about"
       onClick={() => setIsOpen(false)}
       className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-pink-400 transition-all duration-300"
+    style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
     >
-      About
+       About
     </a>
     <a
       href="#work"
@@ -66,6 +67,7 @@ export default function Navbar() {
       href="#contact"
       onClick={() => setIsOpen(false)}
       className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-teal-400 transition-all duration-300"
+      style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
     >
       Contact
     </a>
@@ -78,6 +80,8 @@ export default function Navbar() {
 
 )}
       </AnimatePresence>
+      
     </nav>
+  
   )
 }
