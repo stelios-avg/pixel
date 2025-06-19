@@ -1,0 +1,72 @@
+'use client'
+
+import Menu from './menu'
+import Crystal from './Crystal'
+import { Canvas } from '@react-three/fiber'
+import { Suspense } from 'react'
+import { Environment, Text } from '@react-three/drei'
+import About from './sections/about'
+import Work from './sections/work'
+import Contact from './sections/contact'
+import Head from 'next/head'
+
+
+
+export default function Home() {
+  return (
+    <div className="relative w-screen h-auto overflow-x-hidden bg-black text-white">
+      {/* 🔹 Fixed Canvas in background */}
+      <div className="fixed top-0 left-0 w-full h-screen z-0">
+
+        {/* 🎥 Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        >
+          <source src="/bg-video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* 🎨 3D Crystal Canvas */}
+        <Canvas camera={{ position: [0, 0, 5], fov: 70 }} shadows>
+          <ambientLight intensity={0.4} />
+          <pointLight position={[5, 5, 5]} intensity={1.2} />
+          <Suspense fallback={null}>
+            <Crystal />
+            <Text
+              position={[0, 0, -2]}
+              fontSize={0.2}
+              color="white"
+              anchorX="center"
+              anchorY="middle"
+            >
+              crafting web pixel by pixel
+            </Text>
+            <Environment files="/venice_sunset_4k.hdr" background={false} />
+          </Suspense>
+        </Canvas>
+      </div>
+
+      {/* 🔸 Logo */}
+      <div className="absolute top left-2 w-40 h-20 z-50">
+        <img
+          src="/pixel.png"
+        />
+      </div>
+
+      {/* 🔸 Burger Menu */}
+      <Menu />
+
+      {/* 🔹 Sections πάνω από τον crystal */}
+      <div className="relative z-10">
+        <section id="home" className="h-screen flex items-center justify-center">
+        </section>
+        <About />
+        <Work />
+        <Contact />
+      </div>
+    </div>
+  )
+}
