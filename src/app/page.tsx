@@ -33,7 +33,7 @@ export default function Home() {
         <Canvas camera={{ position: [0, 0, 5], fov: 70 }} shadows>
           <ambientLight intensity={0.4} />
           <pointLight position={[5, 5, 5]} intensity={1.2} />
-          <Suspense fallback={null}>
+          <Suspense fallback={<></>}>
             <Crystal />
             <Text
               position={[0, 0, -2]}
