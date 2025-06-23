@@ -42,12 +42,12 @@ export default function Navbar() {
         {isOpen && (
   <motion.div
   initial={{ opacity: 0, x: 100 }}
-  animate={{ opacity: 1, x: 0 }}
+  animate={{ opacity: 8, x: 0 }}
   exit={{ opacity: 0, x: 100 }}
   transition={{ duration: 0.3 }}
-  className="absolute top-0 right-0 h-screen w-2/3 bg-black/90 backdrop-blur-lg text-white z-40 p-10 flex flex-col justify-center items-start gap-8"
+  className="absolute top-0 right-0 h-screen w-1/3 bg-black/90 backdrop-blur-lg text-white z-40 p-10 flex flex-col justify-center items-start gap-8"
 >
-  <nav className="space-y-6 w-full">
+  <nav className="flex flex-col w-full gap-11">
     <a
       href="#about"
       onClick={() => setIsOpen(false)}
@@ -59,14 +59,15 @@ export default function Navbar() {
     <a
       href="#work"
       onClick={() => setIsOpen(false)}
-      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-blue-400 transition-all duration-300"
-    >
+      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-blue-400 transition-all duration-300 "
+      style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
+    > 
       Work
     </a>
     <a
       href="#contact"
       onClick={() => setIsOpen(false)}
-      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-teal-400 transition-all duration-300"
+      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-teal-400 transition-all duration-300 "
       style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
     >
       Contact

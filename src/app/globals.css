@@ -31,6 +31,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth anchor scrolls */
+  overflow-x: hidden; /* Κλείδωμα horizontal overflow (μόνο αν δεν δημιουργεί reflow) */
+  -webkit-font-smoothing: antialiased; /* Smoother fonts για Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Smoother fonts για Firefox */
+  text-rendering: optimizeLegibility; /* Καλύτερη απόδοση fonts */
+  scroll-padding-top: 100px; /* Αν θες να έχει κενό όταν πατάς anchor links */
 }
 

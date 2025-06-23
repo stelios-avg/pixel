@@ -17,7 +17,7 @@ import Contact from './sections/contact'
 
 export default function Home() {
   return (
-    <div className="relative w-screen h-auto overflow-x-hidden bg-black text-white">
+    <div className="relative w-screen h-auto  bg-black text-white">
       {/* 🔹 Fixed Canvas in background */}
       <div className="fixed top-0 left-0 w-full h-screen z-0">
 
@@ -26,9 +26,12 @@ export default function Home() {
           autoPlay
           loop
           muted
+          preload="auto" 
+          disablePictureInPicture
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
         >
+
           <source src="/bg-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
