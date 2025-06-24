@@ -1,6 +1,6 @@
 'use client'
 
-import FadeInSection from '../../../comp/FadeInSection'
+import FadeInSection from '../../components/FadeInSection'
 
 export default function About() {
   return (

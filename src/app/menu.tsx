@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -41,9 +42,9 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
   <motion.div
-  initial={{ opacity: 0, x: 100 }}
-  animate={{ opacity: 8, x: 0 }}
-  exit={{ opacity: 0, x: 100 }}
+  initial={{ opacity: 0, x: 10 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -10 }}
   transition={{ duration: 0.3 }}
   className="absolute top-0 right-0 h-screen w-1/3 bg-black/90 backdrop-blur-lg text-white z-40 p-10 flex flex-col justify-center items-start gap-8"
 >

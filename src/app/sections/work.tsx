@@ -118,18 +118,22 @@ export default function Work() {
       </div>
 
       <AnimatePresence>
-        {selected && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelected(null)}
-          >
+  {selected && (
+    <motion.div
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[9999]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, type: "tween",  ease: "easeOut" }}
+    >
             <motion.div
-              onClick={(e) => e.stopPropagation()}
-              className="bg-neutral-900 p-8 max-w-2xl w-full text-white border border-white/10 rounded-xl"
-            >
+        onClick={e => e.stopPropagation()}
+        className="bg-neutral-900 p-8 max-w-2xl w-full rounded-xl"
+        initial={{ y: "-50%", opacity: 0, scale: 0.8 }}
+        animate={{ y: "0%",  opacity: 1, scale: 1   }}
+        exit={{ y: "-50%", opacity: 0, scale: 0.8 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      >
               <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-3xl font-bold">{selected.title}</h3>
@@ -176,18 +180,29 @@ export default function Work() {
 
       {/* Fullscreen image */}
       <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[99999]"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-          >
-            <img src={selectedImage} alt="Full Preview" className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {selectedImage && (
+    <motion.div
+      className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9999]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6, type: "tween",  ease: "easeOut" }}
+      onClick={() => setSelectedImage(null)}
+    >
+      <motion.img
+        src={selectedImage}
+        alt="Full Preview"
+        className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg"
+        initial={{ scale: 0.7, opacity: 0 }}
+        animate={{ scale: 1,   opacity: 1 }}
+        exit={{ scale: 0.7, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        onClick={e => e.stopPropagation()}
+      />
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </section>
   );
 }
