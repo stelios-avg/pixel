@@ -10,12 +10,34 @@ export default function ContactModal({ onClose }: Props) {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
 
-  const handleSubmit = () => {
-    //  POST σε backend/email service
-    console.log({ name, email, message })
-    alert('Email Sended Successfully!')
-    onClose()
+  const handleSubmit = async () => {
+  if (!name || !email || !message) {
+    alert('Συμπλήρωσε όλα τα πεδία.');
+    return;
   }
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert('we received your request!');
+    } else {
+      alert(data.error || 'Αποτυχία αποστολής.');
+    }
+
+    onClose(); // Κλείνει το modal
+  } catch (err) {
+    console.error(err);
+    alert('Σφάλμα κατά την αποστολή. Δοκίμασε ξανά.');
+  }
+};
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
