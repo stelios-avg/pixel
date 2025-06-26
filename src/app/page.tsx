@@ -15,6 +15,7 @@ import Contact from './sections/contact'
 
 
 
+
 export default function Home() {
   return (
     <div className="relative w-screen h-auto  bg-black text-white">
