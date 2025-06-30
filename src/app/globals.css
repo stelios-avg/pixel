@@ -54,4 +54,14 @@ html {
   
 }
 
+/* ❌ Απόκρυψη σε κινητά */
+@media (max-width: 768px) {
+  body {
+    cursor: auto; /* default cursor */
+  }
+  .cursor-dot {
+    display: none; /* Απόκρυψη dot cursor */
+  }
+}
+
 
