@@ -44,36 +44,36 @@ export default function Navbar() {
   <motion.div
   initial={{ opacity: 0, x: 10 }}
   animate={{ opacity: 1, x: 0 }}
-  exit={{ opacity: 0, x: -10 }}
+  exit={{ opacity: 0, x: 10 }}
   transition={{ duration: 0.3 }}
-  className="absolute top-0 right-0 h-screen w-1/3 bg-black/90 backdrop-blur-lg text-white z-40 p-10 flex flex-col justify-center items-start gap-8"
+  className="fixed top-0 left-0 w-full h-screen bg-black text-white z-40 px-10 py-20 flex flex-col justify-start items-start gap-12"
 >
   <nav className="flex flex-col w-full gap-11">
-    <a
-      href="#about"
-      onClick={() => setIsOpen(false)}
-      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-pink-400 transition-all duration-300"
-    style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
-    >
-       About
-    </a>
-    <a
-      href="#work"
-      onClick={() => setIsOpen(false)}
-      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-blue-400 transition-all duration-300 "
-      style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
-    > 
-      Work
-    </a>
-    <a
-      href="#contact"
-      onClick={() => setIsOpen(false)}
-      className="text-2xl font-light uppercase tracking-wide hover:tracking-widest hover:text-teal-400 transition-all duration-300 "
-      style={{ writingMode: 'vertical-rl', textOrientation: 'upright' }}
-    >
-      Contact
-    </a>
-  </nav>
+  <a
+    href="#about"
+    onClick={() => setIsOpen(false)}
+    className="text-6xl font-black uppercase hover:tracking-widest transition-all duration-300"
+    
+  >
+    About
+  </a>
+  <a
+    href="#work"
+    onClick={() => setIsOpen(false)}
+    className="text-6xl font-black uppercase hover:tracking-widest transition-all duration-300"
+    
+  > 
+    Work
+  </a>
+  <a
+    href="#contact"
+    onClick={() => setIsOpen(false)}
+    className="text-6xl font-black uppercase hover:tracking-widest transition-all duration-300"
+    
+  >
+    Contact
+  </a>
+</nav>
 
   <div className="mt-10 text-xs text-white/40 uppercase tracking-widest">
     © 2025 pixel_cy

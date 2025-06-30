@@ -3,6 +3,7 @@
 
 body {
   font-family: 'Playfair Display', serif;
+  cursor: none;
 }
 
 
@@ -32,10 +33,25 @@ body {
 }
 html {
   scroll-behavior: smooth; /* Smooth anchor scrolls */
-  overflow-x: hidden; /* Κλείδωμα horizontal overflow (μόνο αν δεν δημιουργεί reflow) */
+  overflow-x: hidden; /* Κλείδωμα horizontal overflow  */
   -webkit-font-smoothing: antialiased; /* Smoother fonts για Webkit */
   -moz-osx-font-smoothing: grayscale; /* Smoother fonts για Firefox */
   text-rendering: optimizeLegibility; /* Καλύτερη απόδοση fonts */
   scroll-padding-top: 100px; /* Αν θες να έχει κενό όταν πατάς anchor links */
 }
+
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 0, 149, 0.3); /* Χρώμα dot */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  
+}
+
 
