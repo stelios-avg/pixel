@@ -32,7 +32,7 @@ export default function Home() {
          className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
         >
 
-          <source src="/bg-video.mp4" type="video/mp4" />
+          <source src="/web design company.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* 🎨 3D Crystal Canvas */}
@@ -58,7 +58,7 @@ export default function Home() {
       {/* 🔸 Logo */}
       <div className="absolute top left w-40 h-20 z-50">
         <img
-          src="/pixel.png"
+          src="/web design nicosia.png"
           alt="Logo"
         />
       </div>

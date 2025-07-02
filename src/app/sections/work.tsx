@@ -21,9 +21,9 @@ const projects = [
     has3D: false,
     preview: '/image/pixelmart-preview.jpg',
     images: [
-      '/image/pixelmart-1.jpg',
-      '/image/pixelmart-2.jpg',
-      '/image/pixelmart-3.jpg',
+      '/image/pixel studio web design.jpg',
+      '/image/UX/UI design services.jpg',
+      '/image/web design.jpg',
     ],
   },
   {
@@ -33,10 +33,10 @@ const projects = [
     has3D: false,
     preview: '/image/structurehub.jpg',
     images: [
-      '/image/hub-1.jpg',
-      '/image/hub-2.jpg',
-      '/image/hub-3.jpg',
-      '/image/hub-4.jpg',
+      '/image/κατασκευή eshop.jpg',
+      '/image/shopify  woocommerce expert.jpg',
+      '/image/ιστοσελίδες με SEO.jpg',
+      '/image/γρήγορες ιστοσελίδες.jpg',
     ],
   },
   {
@@ -46,10 +46,10 @@ const projects = [
     has3D: false,
     preview: '/image/appcrafter-preview.jpg',
     images: [
-      '/image/appcrafter-1.jpg',
-      '/image/appcrafter-2.jpg',
-      '/image/appcrafter-3.jpg',
-      '/image/appcrafter-4.jpg',
+      '/image/κατασκευή ιστοσελίδων κυπρος.jpg',
+      '/image/website designers near me.jpg',
+      '/image/κατασκευή ιστοσελίδων.jpg',
+      '/image/ecommerce website design.jpg',
     ],
   },
 ];

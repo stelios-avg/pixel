@@ -13,7 +13,7 @@ export default function About() {
           {/* Φωτογραφία */}
           <div className="w-full aspect-square overflow-hidden">
             <img
-              src="/me.jpg"
+              src="/website designers near me.jpg"
               alt="Portrait"
               className="w-full h-full object-cover grayscale contrast-125"
             />
