@@ -9,18 +9,18 @@ export async function POST(request: Request) {
   }
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.example.com',
-    port: 587,
-    secure: false,
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
-      user: process.env.EMAIL_USER!,
-      pass: process.env.EMAIL_PASS!,
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   await transporter.sendMail({
-    from: '"Site Contact" <no-reply@pixel-studio.design>',
-    to: 'infopixelcy@gmail.com',
+    from: `"Site Contact" <${process.env.EMAIL_USER}>`,
+    to: process.env.EMAIL_RECEIVER,
     subject: `New message from ${name}`,
     text: `
 Name: ${name}

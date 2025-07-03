@@ -23,18 +23,18 @@ export default function Home() {
 
         {/* 🎥 Background Video */}
         <video
-          autoPlay
-          loop
-          muted
-          preload="auto" 
-          disablePictureInPicture
-          playsInline
-         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
-        >
+  autoPlay
+  loop
+  muted
+  preload="auto"
+  disablePictureInPicture
+  playsInline
+  poster="/path-to-lightweight-poster.jpg"
+  className="fixed top-0 left-0 w-full h-screen z-0"
+>
+  <source src="/web design company.mp4" type="video/mp4" />
+</video>
 
-          <source src="/web design company.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
         {/* 🎨 3D Crystal Canvas */}
         <Canvas camera={{ position: [0, 0, 5], fov: 70 }} shadows>
           <ambientLight intensity={0.4} />
