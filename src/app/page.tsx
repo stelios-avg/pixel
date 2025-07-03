@@ -56,7 +56,7 @@ export default function Home() {
       </div>
 
       {/* 🔸 Logo */}
-      <div className="absolute top left w-40 h-20 z-50">
+      <div className="absolute top left w-24 h-12 md:w-40 md:h-20 z-50">
         <img
           src="/web design nicosia.png"
           alt="Logo"
