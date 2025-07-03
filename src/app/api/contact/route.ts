@@ -18,18 +18,23 @@ export async function POST(request: Request) {
     },
   });
 
-  await transporter.sendMail({
-    from: `"Site Contact" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_RECEIVER,
-    subject: `New message from ${name}`,
-    text: `
+  try {
+    await transporter.sendMail({
+      from: `"Site Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_RECEIVER,
+      subject: `New message from ${name}`,
+      text: `
 Name: ${name}
 Email: ${email}
 
 Message:
 ${message}
-    `,
-  });
+      `,
+    });
 
-  return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true });
+  } catch (err) {
+    console.error('Email send error:', err);
+    return NextResponse.json({ ok: false, error: err }, { status: 500 });
+  }
 }
