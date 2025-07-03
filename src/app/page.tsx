@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="relative w-screen h-auto  bg-black text-white">
       {/* 🔹 Fixed Canvas in background */}
-      <div className="fixed top-0 left-0 w-full h-screen z-0">
+      <div className="fixed top-0 left-0 w-full h-screen overflow-hidden z-0">
 
         {/* 🎥 Background Video */}
         <video
@@ -29,14 +29,14 @@ export default function Home() {
   preload="auto"
   disablePictureInPicture
   playsInline
-  poster="/path-to-lightweight-poster.jpg"
-  className="fixed top-0 left-0 w-full h-screen z-0"
->
+  className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+
   <source src="/web design company.mp4" type="video/mp4" />
 </video>
 
         {/* 🎨 3D Crystal Canvas */}
-        <Canvas camera={{ position: [0, 0, 5], fov: 70 }} shadows>
+        <Canvas camera={{ position: [0, 0, 5], fov: 75 }} shadows>
           <ambientLight intensity={0.4} />
           <pointLight position={[5, 5, 5]} intensity={1.2} />
           <Suspense fallback={<></>}>
