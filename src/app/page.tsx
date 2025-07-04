@@ -55,16 +55,15 @@ export default function Home() {
         </Canvas>
       </div>
 
-      {/* 🔸 Logo */}
-      <div className="absolute top left w-24 h-12 md:w-40 md:h-20 md:top-10 z-50">
-        <img
-          src="/web design nicosia.png"
-          alt="Logo"
-        />
-      </div>
+      {/* Logo */}
+<div className="absolute top-4 left-4 md:top-10 md:left-10 z-10">
+  <img src="/web design nicosia.png" alt="Logo" className="w-24 md:w-40" />
+</div>
 
-      {/* 🔸 Burger Menu */}
-      <Menu />
+{/* Burger Menu */}
+<Menu />
+
+
 
       {/* 🔸 Custom Cursor */
       <Cursor />}
