@@ -13,7 +13,7 @@ export default function Navbar() {
       {/* Burger Button */}
       <button
   onClick={() => setIsOpen((prev) => !prev)}
-  className="absolute top-20 right-4 z-50 w-8 h-8 flex flex-col justify-between items-center group"
+  className="absolute top-12 right-4 z-50  md:top-20 md:right-10 w-8 h-8 flex flex-col justify-between items-center group "
 >
   {/* Line 1 */}
   <span
